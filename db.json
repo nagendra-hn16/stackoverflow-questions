@@ -1,0 +1,563 @@
+{"response": {
+  "items": [
+    {
+      "tags": [
+        "enums",
+        "typescript"
+      ],
+      "owner": {
+        "reputation": 1599,
+        "user_id": 2309928,
+        "user_type": "registered",
+        "accept_rate": 78,
+        "profile_image": "https://i.stack.imgur.com/6fryX.jpg?s=128&g=1",
+        "display_name": "Synoon",
+        "link": "https://stackoverflow.com/users/2309928/synoon"
+      },
+      "is_answered": true,
+      "view_count": 40557,
+      "accepted_answer_id": 30784817,
+      "answer_count": 8,
+      "score": 47,
+      "last_activity_date": 1594531101,
+      "creation_date": 1434009359,
+      "last_edit_date": 1582027722,
+      "question_id": 30774874,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/30774874/enum-as-parameter-in-typescript",
+      "title": "Enum as Parameter in TypeScript",
+      "body": "<p>Isn't it possible to set the type of a parameter to an Enum?      Like this:  </p>\n\n<pre><code>private getRandomElementOfEnum(e : enum):string{\n    var length:number = Object.keys(e).length;\n    return e[Math.floor((Math.random() * length)+1)];\n}\n</code></pre>\n\n<p>If I do that, Intellij mark this code as unknown. And suggest to rename the variable, does that make sense?</p>\n\n<pre><code>private getRandomElementOfEnum(e : any):string{\n    var length:number = Object.keys(e).length;\n    return e[Math.floor((Math.random() * length)+1)];\n}\n</code></pre>\n\n<p>This Code works fine. but isn't as elegant and code-convential.</p>\n\n<p>Is there a possibility or a little workaround to define an enum as a parameter?</p>\n\n<p>EDIT:</p>\n\n<p>After studying those answers, Can I do this also with ah set of defined enum, sth similar to enum1|enum2|enum3?</p>\n"
+    },
+    {
+      "tags": [
+        "python",
+        "python-3.x",
+        "file",
+        "file-read"
+      ],
+      "owner": {
+        "reputation": 13,
+        "user_id": 13893895,
+        "user_type": "registered",
+        "profile_image": "https://lh3.googleusercontent.com/-5PYRn7Qm7xA/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucn678jxjrwTIh2LLOksVUp0wMXo8w/photo.jpg?sz=128",
+        "display_name": "Lekshmi",
+        "link": "https://stackoverflow.com/users/13893895/lekshmi"
+      },
+      "is_answered": true,
+      "view_count": 45,
+      "accepted_answer_id": 62856878,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1594531097,
+      "creation_date": 1594487421,
+      "question_id": 62852214,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/62852214/reading-a-file-block-wise-in-python",
+      "title": "Reading a file block wise in Python",
+      "body": "<p>I am stuck in reading a file block wise where I have multiple conditions to work with and I am facing difficulty in getting some selected data in each block of file</p>\n<p>File content:</p>\n<pre><code>Container:container_12345\n=============================\nLogType:container\nLog Upload Time :Thu Jun 25 12:24:45 +0100 2020\nLogLength:0\nLog Contents:\n\nLogType:stderr\nLog Upload Time :Thu Jun 25 12:24:52 +0100 2020\nLogLength:3000\nLog Contents:\n20/06/25 12:19:39 ERROR Exception found:\njava.io.Exception:Not initated\n    at.apache.java.org........\n20/06/25 12:19:40 INFO executor.EXECUTOR\n20/06/25 12:20:41 WARN Warning as the node is accessed without started\n\nLogType:stdout\nLog Upload Time :Thu Jun 25 12:24:52 +0100 2020\nLogLength:0\nLog Contents:\n\nContainer:container_e182_1234\n=============================\nLogType:container-localizer-syslog\nLog Upload Time :Thu Jun 25 12:24:52 +0100 2020\nLogLength:0\nLog Contents:\n\nLogType:stderr\nLog Upload Time :Thu Jun 25 12:24:52 +0100 2020\nLogLength:3000\nLog Contents:\n\nLogType:stdout\nLog Upload Time :Thu Jun 25 12:24:52 +0100 2020\nLogLength:0\nLog Contents:\n</code></pre>\n<p>I want to check for the ERROR/WARN messages in the <code>Log Contents:</code> of the <code>Logtype:stderr</code> in each container.</p>\n<p>I want the output to be stored in dict in a list if I find any of ERROR/WARN messages in Log Contents</p>\n<p>Eg:</p>\n<pre><code>  [{id:container_12345,\n    Type:stderr,\n    Upload_Time:Thu Jun 25 12:24:52 +0100 2020,\n    Length:3000,\n    Contents:{ERROR Exception found:java.io.Exception:Not initated, \n    WARN Warning as the node is accessed without started}\n    }]\n</code></pre>\n<p>Here you can see in the ERROR message that it also needs take the second line of the particular message but not more than that.\nEg:</p>\n<pre><code>20/06/25 12:19:39 ERROR Exception found:\n    java.io.Exception:Not initated\n        at.apache.java.org........\n</code></pre>\n<p>While parsing the ERROR message I need to take the second line of the error message also such that in the dict I get<code>'ERROR Exception found:java.io.Exception:Not initated'</code> like this not the additional line.</p>\n<p>I am stuck currently at the beginning of the program and below is my code</p>\n<pre><code>from itertools import groupby\nimport re\nf=open(&quot;lg.txt&quot;,&quot;r&quot;)\ngrps=groupby(f,key=lambda x:x.strip().startswith(&quot;Container&quot;))\nfor line in f:\n    if line.starts.with(&quot;Container:&quot;):\n</code></pre>\n<p>Also I thought of using another groupby function for <code>LogType:stderr</code> but that will result in more number of groupby functions since I need to check again for <code>LogContents</code>.</p>\n<p>I also thought of using regex but I am not sure how to use that according to the above mentioned conditions.</p>\n<p>Meanwhile I am also trying to come with the solution and will update if I find any. Please help me to solve.Thanks in advance!</p>\n"
+    },
+    {
+      "tags": [
+        "python",
+        "sftp",
+        "os.system",
+        "lftp",
+        "mget"
+      ],
+      "owner": {
+        "reputation": 1,
+        "user_id": 12842806,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/a9de3d0429718d33997998b949193214?s=128&d=identicon&r=PG&f=1",
+        "display_name": "SHIVAM PANKAJ SONAR",
+        "link": "https://stackoverflow.com/users/12842806/shivam-pankaj-sonar"
+      },
+      "is_answered": false,
+      "view_count": 2,
+      "answer_count": 0,
+      "score": 0,
+      "last_activity_date": 1594531093,
+      "creation_date": 1594531093,
+      "question_id": 62857363,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/62857363/how-to-reach-a-certain-file-path-in-lftp-command",
+      "title": "How to reach a certain file path in lftp command?",
+      "body": "<p>I am trying to write a script in python where main aim is to connect to a certain ip and pull files from a file path.</p>\n<p>Python code line :\nos.system(lftp -p (port number) sftp://su@X.X.X.X -e cd /logs/;mget *; bye)</p>\n<p>But the code is only able to connect to that ip and then I have to manually enter cd /logs/ ; mget * ; bye command ( which is not the motive)</p>\n<p><strong>lftp su@X.X.X.X:/&gt;</strong> cd /logs/;mget *; bye</p>\n<p>I want to run os.system command in such a way that on execution of code , it enters the file path and performs mget and bye without manual intervention.</p>\n"
+    },
+    {
+      "tags": [
+        "css",
+        "mouse-cursor"
+      ],
+      "owner": {
+        "reputation": 5487,
+        "user_id": 4451732,
+        "user_type": "registered",
+        "accept_rate": 75,
+        "profile_image": "https://i.stack.imgur.com/UQN4l.jpg?s=128&g=1",
+        "display_name": "Franklin Yu",
+        "link": "https://stackoverflow.com/users/4451732/franklin-yu"
+      },
+      "is_answered": false,
+      "view_count": 2,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1594531088,
+      "creation_date": 1594531088,
+      "question_id": 62857361,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/62857361/why-the-auto-value-of-cursor-gives-my-anchor-a-text-like-cursor",
+      "title": "Why the “auto” value of “cursor” gives my anchor a text-like cursor",
+      "body": "<p>Documentation of <code>auto</code> value says</p>\n<blockquote>\n<p>The UA will determine the cursor to display based on the current context. E.g., equivalent to text when hovering text.</p>\n</blockquote>\n<p><div class=\"snippet\" data-lang=\"js\" data-hide=\"false\" data-console=\"false\" data-babel=\"false\">\r\n<div class=\"snippet-code\">\r\n<pre class=\"snippet-code-css lang-css prettyprint-override\"><code>a {\n  cursor: auto;\n}</code></pre>\r\n<pre class=\"snippet-code-html lang-html prettyprint-override\"><code>&lt;a href=\"https://www.example.com\"&gt;a link&lt;/a&gt;  </code></pre>\r\n</div>\r\n</div>\r\n</p>\n<p>Why the above style-sheet gives me an I-beam for a link? I expected a <code>pointer</code>-like cursor because that’s for an anchor tag right?</p>\n"
+    },
+    {
+      "tags": [
+        "android",
+        "facebook",
+        "facebook-android-sdk"
+      ],
+      "owner": {
+        "reputation": 584,
+        "user_id": 951138,
+        "user_type": "registered",
+        "accept_rate": 58,
+        "profile_image": "https://i.stack.imgur.com/pu8V7.jpg?s=128&g=1",
+        "display_name": "behinddwalls",
+        "link": "https://stackoverflow.com/users/951138/behinddwalls"
+      },
+      "is_answered": true,
+      "view_count": 1334,
+      "answer_count": 2,
+      "score": 4,
+      "last_activity_date": 1594531087,
+      "creation_date": 1484023669,
+      "last_edit_date": 1484023911,
+      "question_id": 41561308,
+      "content_license": "CC BY-SA 3.0",
+      "link": "https://stackoverflow.com/questions/41561308/no-client-token-found-please-set-the-client-token",
+      "title": "No Client Token found, please set the Client Token",
+      "body": "<p>I am trying to create the login with facebook in android and I am running into this issue. I am not sure what else I am failing to see or set.</p>\n\n<p>I tried setting app toke / client secret but it keeps failing.</p>\n\n<p>Below is my code: \n<strong>Manifest file</strong></p>\n\n<pre><code>&lt;?xml version=\"1.0\" encoding=\"utf-8\"?&gt;\n&lt;manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    xmlns:tools=\"http://schemas.android.com/tools\"\n    package=\"com.test.app\"&gt;\n\n    &lt;application\n        android:allowBackup=\"true\"\n        android:icon=\"@mipmap/ic_launcher\"\n        android:label=\"@string/app_name\"\n        android:supportsRtl=\"true\"\n        android:theme=\"@style/AppTheme\"&gt;\n        &lt;activity android:name=\".SplashScreenActivity\"&gt;\n            &lt;intent-filter&gt;\n                &lt;action android:name=\"android.intent.action.MAIN\" /&gt;\n\n                &lt;category android:name=\"android.intent.category.LAUNCHER\" /&gt;\n            &lt;/intent-filter&gt;\n        &lt;/activity&gt;\n        &lt;activity android:name=\".FacebookLoginActivity\"&gt;\n            &lt;intent-filter&gt;\n                &lt;action android:name=\"android.intent.action.FACEBOOK_LOGIN\" /&gt;\n                &lt;category android:name=\"android.intent.category.DEFAULT\" /&gt;\n            &lt;/intent-filter&gt;\n\n        &lt;/activity&gt;\n        &lt;activity\n            android:name=\"com.facebook.FacebookActivity\"\n            android:configChanges=\"keyboard|keyboardHidden|screenLayout|screenSize|orientation\"\n            android:label=\"@string/app_name\"\n            android:theme=\"@android:style/Theme.Translucent.NoTitleBar\"\n            tools:replace=\"android:theme\" /&gt;\n        &lt;activity android:name=\".MainActivity\"&gt;\n            &lt;intent-filter&gt;\n                &lt;action android:name=\"android.intent.action.MAINACTIVITY\" /&gt;\n                &lt;category android:name=\"android.intent.category.DEFAULT\" /&gt;\n            &lt;/intent-filter&gt;\n        &lt;/activity&gt;\n        &lt;meta-data android:name=\"com.facebook.sdk.ApplicationId\" android:value=\"@string/facebook_app_id\"/&gt;\n    &lt;/application&gt;\n\n    &lt;uses-permission android:name=\"android.permission.INTERNET\" /&gt;\n&lt;/manifest&gt;\n</code></pre>\n\n<p><strong>FacebookLoginActivity</strong></p>\n\n<pre><code> package com.test.app;\n    public class FacebookLoginActivity extends AppCompatActivity {\n\n        private TextView info;\n\n        private LoginButton loginButton;\n        private CallbackManager callbackManager;\n\n        @Override\n        public void onCreate(Bundle bundle) {\n            super.onCreate(bundle);\n            FacebookSdk.sdkInitialize(getApplicationContext());\n\n            callbackManager = CallbackManager.Factory.create();\n            setContentView(R.layout.facebook_login);\n            info = (TextView) findViewById(R.id.info);\n            loginButton = (LoginButton) findViewById(R.id.login_button);\n\n            loginButton.registerCallback(callbackManager, new FacebookCallback&lt;LoginResult&gt;() {\n                @Override\n                public void onSuccess(LoginResult loginResult) {\n                    info.setText(\n                            \"User ID: \"\n                                    + loginResult.getAccessToken().getUserId()\n                                    + \"\\n\" +\n                                    \"Auth Token: \"\n                                    + loginResult.getAccessToken().getToken()\n                    );\n                }\n\n                @Override\n                public void onCancel() {\n                    info.setText(\"Login attempt canceled.\");\n                }\n\n                @Override\n                public void onError(FacebookException error) {\n                    info.setText(\"Login attempt failed.\");\n                }\n            });\n        }\n\n        @Override\n        public void onActivityResult(int requestCode, int resultCode, Intent data) {\n            super.onActivityResult(requestCode, resultCode, data);\n            callbackManager.onActivityResult(requestCode, resultCode, data);\n\n        }\n    }\n</code></pre>\n\n<p><strong>ERROR</strong></p>\n\n<pre><code>Caused by: java.lang.IllegalStateException: No Client Token found, please set the Client Token.\n                      at com.facebook.internal.Validate.hasClientToken(Validate.java:162)\n                      at com.facebook.login.DeviceAuthDialog.startLogin(DeviceAuthDialog.java:178)\n                      at com.facebook.login.DeviceAuthMethodHandler.showDialog(DeviceAuthMethodHandler.java:51)\n                      at com.facebook.login.DeviceAuthMethodHandler.tryAuthorize(DeviceAuthMethodHandler.java:42)\n                      at com.facebook.login.LoginClient.tryCurrentHandler(LoginClient.java:254)\n                      at com.facebook.login.LoginClient.tryNextHandler(LoginClient.java:216)\n                      at com.facebook.login.LoginClient.authorize(LoginClient.java:121)\n                      at com.facebook.login.LoginClient.startOrContinueAuth(LoginClient.java:102)\n                      at com.facebook.login.LoginFragment.onResume(LoginFragment.java:153)\n                      at android.support.v4.app.Fragment.performResume(Fragment.java:2230)\n                      at android.support.v4.app.FragmentManagerImpl.moveToState(FragmentManager.java:1343)\n                      at android.support.v4.app.FragmentManagerImpl.moveFragmentToExpectedState(FragmentManager.java:1523)\n                      at android.support.v4.app.FragmentManagerImpl.moveToState(FragmentManager.java:1585)\n                      at android.support.v4.app.FragmentManagerImpl.dispatchResume(FragmentManager.java:2842)\n                      at android.support.v4.app.FragmentController.dispatchResume(FragmentController.java:223)\n                      at android.support.v4.app.FragmentActivity.onResumeFragments(FragmentActivity.java:509)\n                      at android.support.v4.app.FragmentActivity.onPostResume(FragmentActivity.java:498)\n                      at android.app.Activity.performResume(Activity.java:6807)\n                      at android.app.ActivityThread.performResumeActivity(ActivityThread.java:3406)\n                      at android.app.ActivityThread.handleResumeActivity(ActivityThread.java:3469) \n                      at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:2732) \n                      at android.app.ActivityThread.-wrap12(ActivityThread.java) \n                      at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1477) \n</code></pre>\n"
+    },
+    {
+      "tags": [
+        "java",
+        "google-cloud-storage",
+        "cloud",
+        "cloud-storage"
+      ],
+      "owner": {
+        "reputation": 1,
+        "user_id": 13322732,
+        "user_type": "registered",
+        "profile_image": "https://lh3.googleusercontent.com/a-/AOh14GjFz3TEoW61gZmwbJ-AZLT2IQ2XSjNqg2vEikViyQ=k-s128",
+        "display_name": "insaf safa",
+        "link": "https://stackoverflow.com/users/13322732/insaf-safa"
+      },
+      "is_answered": false,
+      "view_count": 48,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1594531084,
+      "creation_date": 1594224078,
+      "last_edit_date": 1594531084,
+      "question_id": 62798809,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/62798809/upload-file-to-google-cloud-storage-java",
+      "title": "Upload file to google cloud storage (JAVA)",
+      "body": "<p>I want to  upload a file to Google Cloud Storage following the example provided at official <a href=\"https://cloud.google.com/storage/docs/uploading-objects#storage-upload-object-java\" rel=\"nofollow noreferrer\">documentation</a></p>\n<pre><code>  public class UploadObject {\n      public static void uploadObject(\n          String projectId, String bucketName, String objectName, String filePath) throws IOException {\n        // The ID of your GCP project\n        // String projectId = &quot;your-project-id&quot;;\n    \n        // The ID of your GCS bucket\n        // String bucketName = &quot;your-unique-bucket-name&quot;;\n    \n        // The ID of your GCS object\n        // String objectName = &quot;your-object-name&quot;;\n    \n        // The path to your file to upload\n        // String filePath = &quot;path/to/your/file&quot;\n    \n        Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();\n        BlobId blobId = BlobId.of(bucketName, objectName);\n        BlobInfo blobInfo = BlobInfo.newBuilder(blobId).build();\n        storage.create(blobInfo, Files.readAllBytes(Paths.get(filePath)));\n    \n        System.out.println(\n            &quot;File &quot; + filePath + &quot; uploaded to bucket &quot; + bucketName + &quot; as &quot; + objectName);\n      }\n    }\n</code></pre>\n<p>Nevertheless, I'm getting the error:</p>\n<p><strong>Exception in thread &quot;main&quot; com.google.cloud.storage.StorageException: Error getting access token for service account: 400 Bad Request {&quot;error&quot;:&quot;invalid_grant&quot;,&quot;error_description&quot;:&quot;Invalid JWT: Token must be a short-lived token (60 minutes) and in a reasonable timeframe. Check your iat and exp values in the JWT claim.&quot;} at com.google.cloud.storage.spi.v1.HttpStorageRpc.translate(HttpStorageRpc.java:227)</strong></p>\n<p>What could be the cause of this?</p>\n"
+    },
+    {
+      "tags": [
+        "java",
+        "garbage-collection",
+        "jvm"
+      ],
+      "owner": {
+        "reputation": 6350,
+        "user_id": 3401555,
+        "user_type": "registered",
+        "accept_rate": 87,
+        "profile_image": "https://www.gravatar.com/avatar/02764afda23daf4babc3b5874e0eea2d?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Kao",
+        "link": "https://stackoverflow.com/users/3401555/kao"
+      },
+      "is_answered": true,
+      "view_count": 11849,
+      "accepted_answer_id": 27186861,
+      "answer_count": 2,
+      "score": 34,
+      "last_activity_date": 1594531081,
+      "creation_date": 1417170867,
+      "question_id": 27186799,
+      "content_license": "CC BY-SA 3.0",
+      "link": "https://stackoverflow.com/questions/27186799/what-are-gc-roots-for-classes",
+      "title": "What are GC roots for classes?",
+      "body": "<p>In Java, there are special objects called <strong>Garbage Collection Roots</strong> (GC roots). They serve as a root objects for Garbage Collection marking mechanism (see picture). </p>\n\n<p><img src=\"https://i.stack.imgur.com/8ehun.jpg\" alt=\"enter image description here\"></p>\n\n<p><a href=\"http://www.w3resource.com/java-tutorial/garbage-collection-in-java.php\" rel=\"noreferrer\">This article</a> describes four types of GC roots:</p>\n\n<ul>\n<li>local variables</li>\n<li>active threads</li>\n<li>static variables </li>\n<li>JNI references</li>\n</ul>\n\n<p>It is also mentioned, that:</p>\n\n<blockquote>\n  <p>Classes themselves can be garbage-collected.</p>\n</blockquote>\n\n<p>GC roots aren't collected thus classes themselves are not GC roots. </p>\n\n<p>So what are GC roots for the classes?</p>\n"
+    },
+    {
+      "tags": [
+        "maven",
+        "command-line"
+      ],
+      "owner": {
+        "reputation": 2004,
+        "user_id": 1638483,
+        "user_type": "registered",
+        "accept_rate": 69,
+        "profile_image": "https://www.gravatar.com/avatar/486512b693955e030c42a40bd7d812d3?s=128&d=identicon&r=PG",
+        "display_name": "gudepier",
+        "link": "https://stackoverflow.com/users/1638483/gudepier"
+      },
+      "is_answered": true,
+      "view_count": 20828,
+      "answer_count": 7,
+      "score": 15,
+      "last_activity_date": 1594531078,
+      "creation_date": 1399476143,
+      "last_edit_date": 1536163822,
+      "question_id": 23521889,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/23521889/how-to-get-maven-groupid-artifactid-project-version-to-the-command-line",
+      "title": "How to get Maven groupId, artifactId &amp; project version to the command line",
+      "body": "<p>I would like to retrieve from the command line the <em>groupId, the artifactId &amp; the version</em> of a Maven project.</p>\n\n<p>The proposed solution in this topic \"<a href=\"https://stackoverflow.com/questions/3545292/how-to-get-maven-project-version-to-the-bash-command-line\">How to get Maven project version to the bash command line</a>\" is to use the following plugin:</p>\n\n<p><code>mvn org.apache.maven.plugins:maven-help-plugin:2.2:evaluate -Dexpression=project.artifactId</code></p>\n\n<p>It works well but I can't figure out how to set, at the same time, the <code>project.groupId, project.artifactId &amp; project.version</code> to the <em>-Dexpression</em> argument.</p>\n\n<p>I would avoid launching 3 times the Maven command with a different <em>-Dexpression</em> argument each time...</p>\n\n<p>Thks</p>\n\n<p><hr>\nFor the moment, I retrieve data by doing the following:</p>\n\n<pre><code>local pom_groupid=`mvn org.apache.maven.plugins:maven-help-plugin:2.2:evaluate -Dexpression=project.groupId |grep -Ev '(^\\[|Download\\w+:)'`\nlocal pom_artifactid=`mvn org.apache.maven.plugins:maven-help-plugin:2.2:evaluate -Dexpression=project.artifactId |grep -Ev '(^\\[|Download\\w+:)'`\nlocal pom_version=`mvn org.apache.maven.plugins:maven-help-plugin:2.2:evaluate -Dexpression=project.version |grep -Ev '(^\\[|Download\\w+:)'`\n</code></pre>\n"
+    },
+    {
+      "tags": [
+        "node.js",
+        "express",
+        "post",
+        "mongoose",
+        "router"
+      ],
+      "owner": {
+        "reputation": 89,
+        "user_id": 6621882,
+        "user_type": "registered",
+        "accept_rate": 50,
+        "profile_image": "https://www.gravatar.com/avatar/abae14d590c216eee1976d446f9ece98?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Lou",
+        "link": "https://stackoverflow.com/users/6621882/lou"
+      },
+      "is_answered": false,
+      "view_count": 6,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1594531077,
+      "creation_date": 1594520732,
+      "question_id": 62856470,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/62856470/how-to-create-a-post-request-for-express-mongoose-normalized-many-to-many-relati",
+      "title": "How to create a Post Request for Express/Mongoose Normalized Many-to-Many relationships",
+      "body": "<p>I am trying to learn how to create a Normalized many to many Post request in express/router and Mongoose.</p>\n<p>I have three collections: User, Building and Room which is also the order of parent to child documents.</p>\n<p>My Building document schema includes both User and Room id's as follows:</p>\n<pre><code>const mongoose = require('mongoose');\n\n\nconst BuildingSchema = new mongoose.Schema({\n user: [\n   {\n     type: mongoose.Schema.Types.ObjectId,\n     ref: &quot;user&quot;\n   }\n ],\n room: [\n   {\n     type: mongoose.Schema.Types.ObjectId,\n     ref: &quot;room&quot;\n   }\n ],\n\n</code></pre>\n<p>My Room document schema includes the Building ID and another child document as follows:</p>\n<pre><code>const mongoose = require('mongoose');\n\nconst RoomSchema = new mongoose.Schema({\n  building: {\n      type: mongoose.Schema.Types.ObjectId,\n      ref: &quot;building&quot;\n    },\n  furniture: [\n    {\n      type: mongoose.Schema.Types.ObjectId,\n      ref: &quot;furniture&quot;\n    }\n  ],\n</code></pre>\n<p>I am having trouble understanding how to create a post request that allows a user/users to create a Building instance and multiple Room instances associated with it after...</p>\n<p>My express code so far can create a new Building instance but I am unsure how to handle including the Room id's:</p>\n<pre><code>router.post('/createbuilding', [auth, [\n  check('name', 'Building Name is required').not().isEmpty(),\n ]\n], async (req, res) =&gt; {\n    const errors = validationResult(req);\n    if (!errors.isEmpty()) {\n      return res.status(400).json({ errors: errors.array() });\n    }\n        \n    const {\n      name,\n      type,\n      website,\n      location,\n      bio,      \n    } = req.body;\n\n    const buildingFields = {\n      user: req.user.id,\n      //room: req.room.id,\n      name,\n      type,\n      website: website &amp;&amp; website !== '' ? normalize(website, { forceHttps: true }) : '',\n      location,\n      bio\n    };\n\n      try {\n        let building = await Building.findOneAndUpdate(\n          { user: req.user.id },\n          //{ room: req.room.id },\n          { $set: buildingFields },\n          { new: true, upsert: true }\n        );\n        res.json(building);\n      } catch (err) {\n        console.error(err.message);\n        res.status(500).send('Server Error');\n      }\n    }\n  );\n</code></pre>\n<p>Note: The references to room ID are commented out on purpose because this is what I am unsure of how to include in the Post request.</p>\n"
+    },
+    {
+      "tags": [
+        "reactjs",
+        "webpack",
+        "redux",
+        "react-hot-loader",
+        "hot-reload"
+      ],
+      "owner": {
+        "reputation": 115,
+        "user_id": 6282095,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/d81e896b102bdfcdcb48286fb4544248?s=128&d=identicon&r=PG&f=1",
+        "display_name": "sparrow2",
+        "link": "https://stackoverflow.com/users/6282095/sparrow2"
+      },
+      "is_answered": true,
+      "view_count": 28,
+      "accepted_answer_id": 62848522,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1594531075,
+      "creation_date": 1594459436,
+      "last_edit_date": 1594531075,
+      "question_id": 62847365,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/62847365/page-refreshes-when-file-is-changed-react",
+      "title": "page refreshes when file is changed react",
+      "body": "<p>I have a react/redux app and when file changes and I hit save it refreshes the page and clears\nall redux data.I know t that I can persist redux data to localstorage. What I would love to know\nis that is it the default behaviour of react/node server to refresh the page when file changes? If not how can I prevent it?</p>\n"
+    },
+    {
+      "tags": [
+        "reactjs",
+        "svg",
+        "material-ui",
+        "svg-rect"
+      ],
+      "owner": {
+        "reputation": 588,
+        "user_id": 5330103,
+        "user_type": "registered",
+        "accept_rate": 56,
+        "profile_image": "https://www.gravatar.com/avatar/7a1b9518a1b9591ae9e3b322dd644d2f?s=128&d=identicon&r=PG",
+        "display_name": "Amir Rezvani",
+        "link": "https://stackoverflow.com/users/5330103/amir-rezvani"
+      },
+      "is_answered": false,
+      "view_count": 2,
+      "answer_count": 0,
+      "score": 0,
+      "last_activity_date": 1594531067,
+      "creation_date": 1594531067,
+      "question_id": 62857359,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/62857359/use-svgr-and-material-ui-together",
+      "title": "Use SVGR and Material UI together",
+      "body": "<p>i'm trying to use SVGR to convert my svg into react components and i need to use <code>&lt;SvgIcon /&gt;</code> of Material UI and pass the converted component as a prop to it.\nnothing wrong with this yet.</p>\n<p>but,\nSVGR saves these component in a folder called svgCom for example and inside of this folder there is <code>index.js</code> plus converted svg components.</p>\n<p>i need to wrapp all these components inside of <code>&lt;SvgIcon&gt;</code> so i don't have to wrap this icon with <code>&lt;SvgIcon/&gt;</code> again for each use case;\nso far i try to add this component in <code>template.js</code> of SVGR but it throw me an error when try to parse .</p>\n<p>is this the best way of doing such thing or there is better way ?\nif it is what's wrong with my template.js ?</p>\n<p>here is my templete.js :</p>\n<pre><code>function template(\n  { template },\n  opts,\n  { imports, componentName, props, jsx, exports },\n) {\n  return template.ast`\n    ${imports}\n     import { SvgIcon } from &quot;@material-ui/core&quot;;\n     ///////////////////////////////////// error here\n    const ${componentName} = (${props}) =&gt; &lt;SvgIcon component={${jsx}} /&gt;\n    ${exports}\n  `\n}\nmodule.exports = template\n</code></pre>\n<p>thank you.</p>\n"
+    },
+    {
+      "tags": [
+        "android",
+        "android-recyclerview",
+        "notifydatasetchanged"
+      ],
+      "owner": {
+        "reputation": 516,
+        "user_id": 4334671,
+        "user_type": "registered",
+        "accept_rate": 88,
+        "profile_image": "https://i.stack.imgur.com/PuH9f.jpg?s=128&g=1",
+        "display_name": "Alan Godoi da Silveira",
+        "link": "https://stackoverflow.com/users/4334671/alan-godoi-da-silveira"
+      },
+      "is_answered": true,
+      "view_count": 6644,
+      "accepted_answer_id": 54820445,
+      "answer_count": 8,
+      "score": 4,
+      "last_activity_date": 1594531064,
+      "creation_date": 1550802673,
+      "last_edit_date": 1592644375,
+      "question_id": 54819214,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/54819214/recyclerview-is-duplicating-items",
+      "title": "RecyclerView is duplicating items",
+      "body": "<p>My recyclerview is duplicating items when I roll it and I'm already calling <code>adapter.notifyDataSetChanged()</code>.</p>\n<p>So, probably I'm calling data set update at wrong place, but I can't find how it works.</p>\n<p>Here is some code:</p>\n<pre><code>       RecyclerView packageRecyclerView;\n        Intent intent;\n        ChecklistAdapter recyclerViewAdapter;\n    \n        @Override\n        protected void onCreate(@Nullable Bundle savedInstanceState) {\n            super.onCreate(savedInstanceState);\n            setContentView(R.layout.activity_checklist);\n    \n            intent = getIntent();\n            size = intent.getIntExtra(&quot;size&quot;, 0);\n            Log.d(TAG, &quot;onCreate - Qtd Questões: &quot; + size);\n    \n            packageRecyclerView = findViewById(R.id.package_lst);\n    \n            LinearLayoutManager recyclerLayoutManager = new LinearLayoutManager(this);\n            packageRecyclerView.setLayoutManager(recyclerLayoutManager);\n    \n            DividerItemDecoration dividerItemDecoration =\n                    new DividerItemDecoration(packageRecyclerView.getContext(),\n                            recyclerLayoutManager.getOrientation());\n            packageRecyclerView.addItemDecoration(dividerItemDecoration);\n    \n            List&lt;Checklist&gt; modelList = new ArrayList&lt;&gt;();\n            recyclerViewAdapter = new ChecklistAdapter(modelList,this);\n            modelList = getPackages();\n            recyclerViewAdapter = new ChecklistAdapter(modelList,this);\n    \n    //        recyclerViewAdapter = new ChecklistAdapter(getPackages(),this);\n    \n            packageRecyclerView.setAdapter(recyclerViewAdapter);\n    \n    \n        }\n    \n        private List&lt;Checklist&gt; getPackages() {\n            List&lt;Checklist&gt; modelList = new ArrayList&lt;&gt;();\n            Log.d(TAG, &quot;getPackages: &quot; + size);\n            for (int i=0; i&lt;size;i++) {\n    \n                List&lt;String&gt; priceList = new ArrayList&lt;&gt;();\n                priceList.add(&quot;Sim&quot;);\n                priceList.add(&quot;Não&quot;);\n                priceList.add(&quot;Não se Aplica&quot;);\n                modelList.add(new Checklist(intent.getStringExtra(&quot;q&quot;+i), priceList));\n            }\n    \n            recyclerViewAdapter.notifyDataSetChanged();\n            return modelList;\n        }\n</code></pre>\n<p>Here is my adapter:</p>\n<pre><code>    public class ChecklistAdapter extends\n        RecyclerView.Adapter&lt;ChecklistAdapter.ViewHolder&gt; {\n\n    private List&lt;Checklist&gt; packageList;\n    private Context context;\n\n    public ChecklistAdapter(List&lt;Checklist&gt; packageListIn\n            , Context ctx) {\n        packageList = packageListIn;\n        context = ctx;\n    }\n\n    @Override\n    public int getItemViewType(int position) {\n        return super.getItemViewType(position);\n    }\n\n    @Override\n    public void setHasStableIds(boolean hasStableIds) {\n        super.setHasStableIds(hasStableIds);\n    }\n\n    @Override\n    public long getItemId(int position) {\n        return super.getItemId(position);\n    }\n\n    @Override\n    public ChecklistAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,\n                                                                    int viewType) {\n\n        View view = LayoutInflater.from(parent.getContext())\n                .inflate(R.layout.rv_checklistlines, parent, false);\n\n        ChecklistAdapter.ViewHolder viewHolder =\n                new ChecklistAdapter.ViewHolder(view);\n        return viewHolder;\n    }\n\n\n    @Override\n    public void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull List&lt;Object&gt; payloads) {\n        super.onBindViewHolder(holder, position, payloads);\n    }\n\n    @Override\n    public void onBindViewHolder(ChecklistAdapter.ViewHolder holder,\n                                 int position) {\n        Checklist packageModel = packageList.get(position);\n        holder.packageName.setText(packageModel.getTitle());\n\n        int id = (position+1)*100;\n        for(String price : packageModel.getQuestions()){\n            RadioButton rb = new RadioButton(ChecklistAdapter.this.context);\n            rb.setId(id++);\n            rb.setText(price);\n\n            holder.priceGroup.addView(rb);\n        }\n    }\n\n    @Override\n    public int getItemCount() {\n        return packageList.size();\n    }\n\n    public class ViewHolder extends RecyclerView.ViewHolder {\n\n        public TextView packageName;\n        public RadioGroup priceGroup;\n\n        public ViewHolder(View view) {\n            super(view);\n            packageName = view.findViewById(R.id.package_name);\n            priceGroup = view.findViewById(R.id.price_grp);\n\n            priceGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {\n                @Override\n                public void onCheckedChanged(RadioGroup radioGroup, int i) {\n\n                    Toast.makeText(ChecklistAdapter.this.context,\n                            &quot;Radio button clicked &quot; + radioGroup.getCheckedRadioButtonId(),\n                            Toast.LENGTH_SHORT).show();\n                    \n                }\n            });\n        }\n    }\n}\n    \n</code></pre>\n<p>In the image below you can see that radio buttons are duplicated and there is some extra blank space in all rows. I saw many questions here and in another forums about this, but it's not clear to me where to call this update dataset.</p>\n<p><a href=\"https://i.stack.imgur.com/sf4wx.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/sf4wx.png\" alt=\"enter image description here\" /></a></p>\n<p>I'm not an advanced Android developer, so if you can explain, it will be easier to me.</p>\n<p><strong>EDIT 1</strong></p>\n<p>Checklist class:</p>\n<pre><code>       import java.util.List;\n    \n    public class Checklist {\n    \n        String title;\n        List&lt;String&gt; questions;\n    \n        public Checklist(String title, List&lt;String&gt; questions) {\n            this.title = title;\n            this.questions = questions;\n        }\n    \n        public String getTitle() {\n            return title;\n        }\n    \n        public void setTitle(String title) {\n            this.title = title;\n        }\n    \n        public List&lt;String&gt; getQuestions() {\n            return questions;\n        }\n    \n        public void setQuestions(List&lt;String&gt; questions) {\n            this.questions = questions;\n}\n</code></pre>\n<p><strong>EDIT 2</strong></p>\n<p>Adapter Code updated</p>\n"
+    },
+    {
+      "tags": [
+        "python",
+        "macos",
+        "spotlight"
+      ],
+      "owner": {
+        "reputation": 1,
+        "user_id": 13915028,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/02b8b42a49a81dc924a438920622409a?s=128&d=identicon&r=PG&f=1",
+        "display_name": "kalyan",
+        "link": "https://stackoverflow.com/users/13915028/kalyan"
+      },
+      "is_answered": false,
+      "view_count": 7,
+      "answer_count": 0,
+      "score": -1,
+      "last_activity_date": 1594531064,
+      "creation_date": 1594530213,
+      "last_edit_date": 1594531064,
+      "question_id": 62857274,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/62857274/how-to-pass-arguments-to-command-file-in-osx",
+      "title": "How to pass arguments to .command file in OSX",
+      "body": "<p>I have a 2-part problem.</p>\n<p>1 - I am trying to run a .command file (in shell) which invokes a python script but it needs to be forwarded the command line arguments - see below. ( I am using %* as a placeholder for those arguments )</p>\n<p>#!/usr/bin/env bash</p>\n<p>python3 /Users/kalyap/Downloads/PythonProjects/mapit.py %*</p>\n<p>Is it the correct symbol to use in macos?\nWhen I use the it in macos shell (sh filename.command inputargs1 inputargs2) it literally takes %* as arguments and ignores both inputargs1 and inputargs2</p>\n<p>FYI - %* works for windows run for command arguments forwarding, i.e. it respects both inputargs</p>\n<p>2 - Once I know what symbol to use above, I would like to use both shell and spotlight to run the command file.</p>\n<p>Can Spotlight recognize the arguments after the xyz.command filename?</p>\n"
+    },
+    {
+      "tags": [
+        "java",
+        "linux",
+        "installation",
+        "wget"
+      ],
+      "owner": {
+        "reputation": 8953,
+        "user_id": 835806,
+        "user_type": "registered",
+        "accept_rate": 94,
+        "profile_image": "https://www.gravatar.com/avatar/7d6a0b056b8aa906c9c8770a5868bcd2?s=128&d=identicon&r=PG",
+        "display_name": "thejartender",
+        "link": "https://stackoverflow.com/users/835806/thejartender"
+      },
+      "is_answered": true,
+      "view_count": 456644,
+      "protected_date": 1422065077,
+      "accepted_answer_id": 10959815,
+      "answer_count": 29,
+      "score": 616,
+      "last_activity_date": 1594531062,
+      "creation_date": 1335103390,
+      "last_edit_date": 1436902340,
+      "question_id": 10268583,
+      "content_license": "CC BY-SA 3.0",
+      "link": "https://stackoverflow.com/questions/10268583/downloading-java-jdk-on-linux-via-wget-is-shown-license-page-instead",
+      "title": "Downloading Java JDK on Linux via wget is shown license page instead",
+      "body": "<p>When I try to download Java from Oracle I instead end up downloading a page telling me that I need agree to the OTN license terms.</p>\n\n<blockquote>\n  <h1>Sorry!</h1>\n  \n  <p>In order to download products from Oracle Technology Network you must agree to the OTN license terms.</p>\n  \n  <p>Be sure that...</p>\n  \n  <ul>\n  <li>Your browser has \"cookies\" and JavaScript enabled.</li>\n  <li>You clicked on \"Accept License\" for the product you wish to download.</li>\n  <li>You attempt the download within 30 minutes of accepting the license.</li>\n  </ul>\n</blockquote>\n\n<p>How can I download and install Java?</p>\n"
+    },
+    {
+      "tags": [
+        "sql-server",
+        "sql-server-2008",
+        "database-backups"
+      ],
+      "owner": {
+        "reputation": 17,
+        "user_id": 13903761,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/a34a723593299fa1a86ad31138c634b6?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Himanshu",
+        "link": "https://stackoverflow.com/users/13903761/himanshu"
+      },
+      "is_answered": false,
+      "view_count": 17,
+      "answer_count": 2,
+      "score": 0,
+      "last_activity_date": 1594531058,
+      "creation_date": 1594386599,
+      "last_edit_date": 1594531058,
+      "question_id": 62835029,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/62835029/how-to-restore-data-from-single-bak-file-which-contain-multiple-mdf-file-in-2008",
+      "title": "How to restore data from single bak file which contain multiple mdf file in 2008R2",
+      "body": "<p>i have multiple mdf files inside a single bak file how can I restore bak file in database.</p>\n"
+    },
+    {
+      "tags": [
+        "c#",
+        "asp.net-mvc",
+        "file-upload"
+      ],
+      "owner": {
+        "reputation": 2214,
+        "user_id": 3722884,
+        "user_type": "registered",
+        "accept_rate": 42,
+        "profile_image": "https://i.stack.imgur.com/7AFP5.jpg?s=128&g=1",
+        "display_name": "SimpleGuy",
+        "link": "https://stackoverflow.com/users/3722884/simpleguy"
+      },
+      "is_answered": false,
+      "view_count": 22,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1594531053,
+      "creation_date": 1594518639,
+      "last_edit_date": 1594531053,
+      "question_id": 62856301,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/62856301/asp-net-mvc-text-fields-not-sent-to-model-when-form-contains-files-and-text-fiel",
+      "title": "ASP.NET MVC Text Fields not sent to model when form contains Files and Text Fields",
+      "body": "<p>I have developed a form where the form fields contain <code>type=text</code> fields and <code>type=file</code> fields.</p>\n<pre><code>@using (Html.BeginForm(&quot;UploadFiles&quot;, &quot;Home&quot;, FormMethod.Post, new { enctype = &quot;multipart/form-data&quot;}))\n{\n    @Html.AntiForgeryToken()\n\n    &lt;div class=&quot;container&quot;&gt;\n        @Html.ValidationSummary(true, &quot;&quot;, new { @class = &quot;text-danger&quot; })\n        &lt;div class=&quot;row justify-content-center align-items-center&quot;&gt;\n            &lt;div class=&quot;card border-info col-sm-6&quot;&gt;\n                &lt;div class=&quot;card-body&quot;&gt;\n                    &lt;div class=&quot;form-group&quot;&gt;\n                        @Html.LabelFor(model =&gt; model.UploadForm.Name, new { @class = &quot;control-label&quot; })\n                        @Html.TextBoxFor(model =&gt; model.UploadForm.Name, &quot;&quot;, htmlAttributes: new { @type = &quot;text&quot;, @class = &quot;form-control&quot;, aria_describedby = &quot;nameHelp&quot;, placeholder = &quot;Enter name&quot; })\n                        &lt;small id=&quot;nameHelp&quot; class=&quot;form-text text-muted&quot;&gt;Name to be associated&lt;/small&gt;\n                        @Html.ValidationMessageFor(model =&gt; model.UploadForm.Name, &quot;&quot;, new { @class = &quot;text-danger&quot; })\n                    &lt;/div&gt;\n                    &lt;div class=&quot;form-group&quot;&gt;\n                        @Html.LabelFor(model =&gt; model.UploadForm.files, htmlAttributes: new { @class = &quot;control-label&quot; })\n                        @Html.TextBoxFor(model =&gt; model.UploadForm.files, &quot;&quot;, htmlAttributes: new { @type = &quot;file&quot;, @multiple = &quot;multiple&quot;, @class = &quot;form-control-file&quot;, aria_describedby = &quot;filesHelp&quot; })\n                        \n                        &lt;small id=&quot;filesHelp&quot; class=&quot;form-text text-muted&quot;&gt;Files to be uploaded&lt;/small&gt;\n                        @Html.ValidationMessageFor(model =&gt; model.UploadForm.files, &quot;&quot;, new { @class = &quot;text-danger&quot; })\n                    &lt;/div&gt;\n                    &lt;div class=&quot;row justify-content-end&quot; style=&quot;margin-right:1px;&quot;&gt;\n                        &lt;input type=&quot;submit&quot; value=&quot;Upload&quot; class=&quot;btn btn-primary w-25&quot;/&gt;\n                    &lt;/div&gt;\n                &lt;/div&gt;\n            &lt;/div&gt;\n        &lt;/div&gt;\n        &lt;hr /&gt;\n    &lt;/div&gt;\n}\n</code></pre>\n<p>My Controller looks as under</p>\n<pre><code>[HttpPost]\npublic ActionResult UploadFiles(HomeModel model)\n{        \n    if (ModelState.IsValid)\n    {\n        **// getting model.UploadForm.Name null here**\n        **// getting model.UploadForm.files is populated and contains files**\n    }\n    \n    return View(&quot;Index&quot;, model);\n}\n</code></pre>\n<p><strong>Am I missing something ?</strong></p>\n<p>Also, if anyone can tell, how can I modify controller to obtain only relevant data like as under. I tried doing this, but everything comes null.</p>\n<pre><code>UploadFiles (string name, HttpPostedFile[] files) \n{\n        // both args are coming null\n}\n</code></pre>\n<hr />\n<p><strong>Edit:</strong></p>\n<p>This is my model as requested:</p>\n<pre><code>public class HomeModel\n{\n    public UploadForm UploadForm { get; set; }\n    public List&lt;UploadedItem&gt; UploadedItems { get; set; }\n}\n</code></pre>\n<p>and this is what UploadForm looks like</p>\n<pre><code>public class UploadForm\n{\n    [Display(Name = &quot;Name&quot;)]\n    [Required(ErrorMessage = &quot;Please enter name.&quot;)]\n    public string Name;\n\n    [Required(ErrorMessage = &quot;Please select file(s).&quot;)]\n    [Display(Name = &quot;Files&quot;)]\n    public HttpPostedFileBase[] files { get; set; }\n}\n</code></pre>\n"
+    },
+    {
+      "tags": [
+        "azure",
+        "istio",
+        "azure-api-management",
+        "azure-kubernetes"
+      ],
+      "owner": {
+        "reputation": 17,
+        "user_id": 7669633,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/9fa36ed38f61581bde7bf0f4c32b6749?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Srinivasa Tadipatri",
+        "link": "https://stackoverflow.com/users/7669633/srinivasa-tadipatri"
+      },
+      "is_answered": false,
+      "view_count": 5,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1594531052,
+      "creation_date": 1594515763,
+      "question_id": 62856091,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/62856091/azure-apim-integration-with-istio-gateway",
+      "title": "Azure APIM Integration with Istio Gateway",
+      "body": "<p>We are trying to implement Istio Service mesh and trying to use Istio Gateway, we are already using Azure APIM as an ingress gateway, all the traffic has to go through Azure APIM and to Azure Kubernetes.  Can someone guide us or help us out, how to integrate Azure APIM with Istio Gateway.</p>\n"
+    },
+    {
+      "tags": [
+        "php",
+        "laravel-5",
+        "centos"
+      ],
+      "owner": {
+        "reputation": 891,
+        "user_id": 2940793,
+        "user_type": "registered",
+        "accept_rate": 50,
+        "profile_image": "https://www.gravatar.com/avatar/13dcf1f0e8bc94c8318be6b3e080be7d?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Md Hasibur Rahaman",
+        "link": "https://stackoverflow.com/users/2940793/md-hasibur-rahaman"
+      },
+      "is_answered": true,
+      "view_count": 18155,
+      "answer_count": 3,
+      "score": 4,
+      "last_activity_date": 1594531045,
+      "creation_date": 1536127153,
+      "question_id": 52178033,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/52178033/the-stream-or-file-laravel-log-could-not-be-opened-failed-to-open-stream-pe",
+      "title": "&quot;The stream or file &quot;laravel.log&quot; could not be opened: failed to open stream: Permission denied&quot;",
+      "body": "<p>I upload the file to my cent OS server a few days ago, it was working fine, but from today I am getting the error.</p>\n\n<blockquote>\n  <p>The stream or file \"/var/www/html/hasibtest/storage/logs/laravel.log\"\n  could not be opened: failed to open stream: Permission denied</p>\n</blockquote>\n\n<p>Where My log file is with 777 permission I am also trying with 0755, 0644</p>\n\n<p>can anyone tell me how I can resolve this issue?</p>\n"
+    },
+    {
+      "tags": [
+        "algorithm",
+        "dynamic-programming"
+      ],
+      "owner": {
+        "reputation": 1072,
+        "user_id": 7183221,
+        "user_type": "registered",
+        "accept_rate": 100,
+        "profile_image": "https://www.gravatar.com/avatar/86c7680d9a8fe1fad9c200386bacc0fe?s=128&d=identicon&r=PG&f=1",
+        "display_name": "csguy",
+        "link": "https://stackoverflow.com/users/7183221/csguy"
+      },
+      "is_answered": false,
+      "view_count": 15,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1594531044,
+      "creation_date": 1594527425,
+      "question_id": 62857013,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/62857013/maximum-sum-of-non-consecutive-elements-dynamic-programming",
+      "title": "Maximum sum of non consecutive elements (Dynamic Programming)",
+      "body": "<blockquote>\n<p>Given an array of positive integers, what's the most efficient\nalgorithm to find non-consecutive elements from this array which, when\nadded together, produce the maximum sum?</p>\n</blockquote>\n<p>The dynamic programming solution is to use an auxiliary array <code>maxSum</code> holding the max sum up until that particular index. We start by setting the first 2 indices of the array, and fill the rest of the array with <code>max(array[i]+maxSum[i-2], maxSum[i-1])</code>.</p>\n<hr />\n<p>I understand that we cannot add adjacent elements, but I am struggling to understand how the above solution takes into consideration that it is possible for the the previous element in <code>maxSum[i]</code> to not be the result of summing with <code>array[i]</code>.</p>\n<p>For example:</p>\n<pre><code>index:  0 1 2  3 4\n\narray:  3 5 -7 8 10\n\nmaxSum: 3 5 5  _ \n</code></pre>\n<p>We see that maxSum[2] is not a result of summing with array[2].</p>\n<p>To find <code>maxSum[3] = max(array[3]+maxSum[1], maxSum[2])</code>, but why don't we consider <code>maxSum[2] + array[3]</code>? Since it is possible for maxSum[2] to not consist of the adjacent array[2] value.</p>\n"
+    },
+    {
+      "tags": [
+        "c#",
+        "random"
+      ],
+      "owner": {
+        "reputation": 421,
+        "user_id": 9378439,
+        "user_type": "registered",
+        "profile_image": "https://lh3.googleusercontent.com/-uRAIXKCAE-g/AAAAAAAAAAI/AAAAAAAAAJA/3p6Mreec-XI/photo.jpg?sz=128",
+        "display_name": "daniel.jbatiz",
+        "link": "https://stackoverflow.com/users/9378439/daniel-jbatiz"
+      },
+      "is_answered": false,
+      "view_count": 18,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1594531039,
+      "creation_date": 1594529767,
+      "last_edit_date": 1594530571,
+      "question_id": 62857236,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/62857236/why-i-cannot-generate-more-than-6551-random-numbers",
+      "title": "Why I cannot generate more than 6551 random numbers",
+      "body": "<p>I have the following code in C#, inside the Main method of a Simple Console Application.</p>\n<p>I have debuged and, after List.Count = 6551 it seems the random values repeat themselves.</p>\n<pre><code>List&lt;int&gt; list = new List&lt;int&gt;(9999);\nbool waiting = true;\nRandom random = new Random(DateTime.Today.Milliseconds);\n\ndo\n{\n    int units = random.Next(0, 9);\n    int tens = random.Next(0, 9);\n    int hundreds = random.Next(0, 9);\n    int thousands = random.Next(0, 9);\n\n   int result = int.Parse(String.Format(&quot;{0}{1}{2}{3}&quot;, units, tens, hundreds, thousands));\n\n   if(list.Contains(result))\n   {\n       continue;\n   }\n   else\n   {\n       list.Add(result);\n   }\n\n   if(list.Count == 9999)\n   {\n       waiting = false;\n   }\n\n}while(waiting);\n\nConsole.WriteLine(&quot;Finished&quot;):\nConsole.ReadKey();\n</code></pre>\n"
+    }
+  ],
+  "has_more": true,
+  "quota_max": 10000,
+  "quota_remaining": 9998
+}}

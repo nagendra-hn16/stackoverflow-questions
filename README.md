@@ -42,3 +42,9 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+<!-- 
+The app should be a single page with the list with the following columns: “Author,” “Title,” and “Creation date.”
+The page should have an infinite scroll without noticeable paging.
+Pop up with question title and text should be shown with a link to the question page on click on any row in the list.
+The result of the test task should be the link to the git repo & optionally working demo site. -->
