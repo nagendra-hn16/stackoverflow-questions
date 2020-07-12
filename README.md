@@ -1,5 +1,11 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+This is a single page app with a table  that has the following columns: “Author,” “Title,” and “Creation date.”
+I fetch 40 questions at a time before the scroll hits the bottom leading to infinite scrolling.
+I could not find a way of getting the search results in batches as consecutive requests yielded the same results.
+So I am making the requests with from and to dates with 1 month time intervals.
+On click of every row, a pop-up opens with question title, text and a link to the question page on stackoverflow.com.
+
 ## Available Scripts
 
 In the project directory, you can run:
