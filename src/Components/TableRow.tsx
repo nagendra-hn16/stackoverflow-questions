@@ -27,12 +27,12 @@ class TableRow extends React.Component<Props> {
       "en-US",
       { month: 'long', day: 'numeric', year: 'numeric' });
     return (
-      <tr onClick={this.openModal} className="row"
+      <tr onClick={this.openModal} className="questiontablerow"
         data-link={this.props.question.link}>
-        <th scope="row" className="text-left col-1">{this.props.count + 1}</th>
-        <td className="text-left col-3">{this.props.question.owner['display_name']}</td>
-        <td className="text-left col-6">{this.props.question.title}</td>
-        <td className="text-left col-2">{formattedDate}</td>
+        <th scope="row" className="text-left">{this.props.count + 1}</th>
+        <td className="text-left">{this.props.question.owner['display_name']}</td>
+        <td className="text-left">{this.props.question.title}</td>
+        <td className="text-left">{formattedDate}</td>
         <Modal
           closeAfterTransition
           open={this.state.show}
@@ -40,7 +40,7 @@ class TableRow extends React.Component<Props> {
           aria-labelledby="simple-modal-title"
           aria-describedby="simple-modal-description"
         >
-          <DetailsPopup data-questiontitle={this.props.question.title}  
+          <DetailsPopup data-questiontitle={this.props.question.title}
             data-link={this.props.question.link} data-count={this.props.count}
             data-body={this.props.question.body}>
           </DetailsPopup>

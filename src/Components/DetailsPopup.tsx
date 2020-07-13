@@ -8,9 +8,6 @@ interface Props {
 }
 
 class DetailsPopup extends React.Component<Props> {
-  closeModal = () => {
-    this.setState({show: false})
-  }
   state = {
     answer: []
   };
@@ -33,5 +30,3 @@ class DetailsPopup extends React.Component<Props> {
 }
 
 export default DetailsPopup;
-
-

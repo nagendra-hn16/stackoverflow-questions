@@ -65,11 +65,11 @@ class QuestionsTable extends React.Component {
       <div onScroll={(ev)=>{this.scrollEvent(ev)}} className="questionstable">
         <table className="table my-md-7 table-hover">
           <thead className="thead-dark fixedtableheader container">
-            <tr className="row">
-              <th scope="col" className="text-left col-1">#</th>
-              <th scope="col" className="text-left col-3">Author</th>
-              <th scope="col" className="text-left col-6">Title</th>
-              <th scope="col" className="text-left col-2">Creation Date</th>
+            <tr>
+              <th className="text-left">#</th>
+              <th className="text-left">Author</th>
+              <th className="text-left">Title</th>
+              <th className="text-left">Creation Date</th>
             </tr>
           </thead>
           <tbody className="container">
