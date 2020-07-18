@@ -19,7 +19,7 @@ interface Owner {
 let lastScroll = 300;
 let fromdate = 1393977600;
 let todate = 1396656000;
-const increment = 2678400;
+const increment = 5356800;
 
 class QuestionsTable extends React.Component {
   state = {
@@ -31,7 +31,7 @@ class QuestionsTable extends React.Component {
    */
   componentDidMount() {
     lastScroll = document.querySelectorAll('body').length === 1
-      ? 1046 - (document.querySelectorAll('body')[0].offsetHeight + 200)
+      ? 2026 - (document.querySelectorAll('body')[0].offsetHeight + 400)
       : 300;
     axios
       .get(
@@ -46,9 +46,9 @@ class QuestionsTable extends React.Component {
    * on scroll, calling the api to get 40 answered questionswhen scroll is about to reach bottom. 
    */
   scrollEvent = (ev: any) => {
-    if(ev.target.scrollTop > lastScroll) {
+    if(ev.target && (ev.target as HTMLDivElement).classList[0] === "questionstable" && ev.target.scrollTop > lastScroll) {
       let exisitingResults  = Object.assign({}, this.state);
-      lastScroll = lastScroll + 1046;
+      lastScroll = lastScroll + 2026;
       fromdate = todate;
       todate = fromdate + increment;
       axios
@@ -63,7 +63,7 @@ class QuestionsTable extends React.Component {
   render() {
     return (
       <div onScroll={(ev)=>{this.scrollEvent(ev)}} className="questionstable">
-        <table className="table my-md-7 table-hover">
+        <table className="table table-hover">
           <thead className="thead-dark fixedtableheader container">
             <tr>
               <th className="text-left">#</th>

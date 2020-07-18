@@ -1,7 +1,7 @@
 import React from "react";
 import { question } from "./QuestionsTable"
 import DetailsPopup from "./DetailsPopup";
-import Modal from '@material-ui/core/Modal';
+import MyModal from './MyModal';
 
 interface Props {
   count: number;
@@ -9,19 +9,44 @@ interface Props {
 }
 
 class TableRow extends React.Component<Props> {
-  
-  openModal = () => {
-    this.setState({show: true})
+  openModal = (ev: React.MouseEvent) => {
+    this.setState({show: true});
+    ev.stopPropagation();
   }
 
-  closeModal = () => {
-    this.setState({show: false})
+  closeModal = (ev: React.MouseEvent) => {
+    this.setState({show: false});
+    ev.stopPropagation();
   }
+
+  handleClickOutside = (ev: MouseEvent) => { 
+      if(ev.target && (ev.target as HTMLDivElement).classList[0] === "overlay") {
+        this.setState({show: false});
+      }
+      ev.stopPropagation();
+  };
+
+  closeModalOnEsc = (ev: KeyboardEvent) => {
+    if(ev.target && ev.keyCode === 27) {
+      this.setState({show: false});
+    }
+    ev.stopPropagation();
+  };
 
   state = {
     show: false
   }
-  
+
+  componentDidMount() {
+    document.addEventListener('mousedown', this.handleClickOutside);
+    document.addEventListener('keydown', this.closeModalOnEsc);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleClickOutside);
+    document.removeEventListener('keydown', this.closeModalOnEsc);
+  }
+
   render() {
     const formattedDate = new Date(this.props.question['creation_date'] * 1000).toLocaleDateString(
       "en-US",
@@ -33,18 +58,17 @@ class TableRow extends React.Component<Props> {
         <td className="text-left">{this.props.question.owner['display_name']}</td>
         <td className="text-left">{this.props.question.title}</td>
         <td className="text-left">{formattedDate}</td>
-        <Modal
-          closeAfterTransition
-          open={this.state.show}
-          onClose={this.closeModal}
+        <MyModal
+          open={this.state.show}    
+          closecallback={this.closeModal}
           aria-labelledby="simple-modal-title"
           aria-describedby="simple-modal-description"
         >
           <DetailsPopup data-questiontitle={this.props.question.title}
             data-link={this.props.question.link} data-count={this.props.count}
-            data-body={this.props.question.body}>
+            data-body={this.props.question.body} onClick={this.closeModal}>
           </DetailsPopup>
-        </Modal>
+        </MyModal>
       </tr>
     );
   }
